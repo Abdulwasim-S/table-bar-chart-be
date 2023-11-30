@@ -52,9 +52,23 @@ export const AllCombined = async (req, res) => {
       acc[curr.category] = (acc[curr.category] || 0) + 1;
       return acc;
     }, {});
-    res
-      .status(200)
-      .json({ message: "Success", items, barchart_items, categories });
+    const statisticData = items.reduce((acc, curr) => {
+      if (curr.sold === true) {
+        acc["sold"] = (acc["sold"] || 0) + 1;
+      } else {
+        acc["notSold"] = (acc["notSold"] || 0) + 1;
+      }
+      acc["sale"] = (acc["sale"] || 0) + +curr.price;
+      return acc;
+    }, {});
+
+    res.status(200).json({
+      message: "Success",
+      items,
+      barchart_items,
+      categories,
+      statisticData,
+    });
   } catch (error) {
     res.status(500).json({ message: "Error", error });
   }
