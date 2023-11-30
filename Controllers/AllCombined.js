@@ -15,7 +15,17 @@ export const AllCombined = async (req, res) => {
       "701-800": 0,
       "900 above": 0,
     };
-    const barchart_items = {};
+    const barchart_items = {
+      "0-100": 0,
+      "101-200": 0,
+      "201-300": 0,
+      "301-400": 0,
+      "401-500": 0,
+      "501-600": 0,
+      "601-700": 0,
+      "701-800": 0,
+      "900 above": 0,
+    };
     items.map((ele) => {
       const { price } = ele;
       if (price >= 0 && price <= 100) {
