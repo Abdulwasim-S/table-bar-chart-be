@@ -19,17 +19,19 @@ export const BarChartData = async (req, res) => {
       const { price } = ele;
       if (price >= 0 && price <= 100) {
         data["0-100"] = data["0-100"] + 1;
-      } else if (price >= 0 && price <= 100) {
+      } else if (price >= 101 && price <= 200) {
+        data["101-200"] = data["101-200"] + 1;
+      } else if (price >= 201 && price <= 300) {
         data["201-300"] = data["201-300"] + 1;
-      } else if (price >= 0 && price <= 100) {
+      } else if (price >= 301 && price <= 400) {
         data["301-400"] = data["301-400"] + 1;
-      } else if (price >= 0 && price <= 100) {
+      } else if (price >= 401 && price <= 500) {
         data["401-500"] = data["401-500"] + 1;
-      } else if (price >= 0 && price <= 100) {
+      } else if (price >= 501 && price <= 600) {
         data["501-600"] = data["501-600"] + 1;
-      } else if (price >= 0 && price <= 100) {
+      } else if (price >= 601 && price <= 700) {
         data["601-700"] = data["601-700"] + 1;
-      } else if (price >= 0 && price <= 100) {
+      } else if (price >= 701 && price <= 800) {
         data["701-800"] = data["701-800"] + 1;
       } else {
         data["900 above"] = data["900 above"] + 1;

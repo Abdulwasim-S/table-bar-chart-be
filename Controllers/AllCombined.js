@@ -30,17 +30,19 @@ export const AllCombined = async (req, res) => {
       const { price } = ele;
       if (price >= 0 && price <= 100) {
         barchart_items["0-100"] = barchart_items["0-100"] + 1;
-      } else if (price >= 0 && price <= 100) {
+      } else if (price >= 101 && price <= 200) {
+        barchart_items["101-200"] = barchart_items["101-200"] + 1;
+      } else if (price >= 201 && price <= 300) {
         barchart_items["201-300"] = barchart_items["201-300"] + 1;
-      } else if (price >= 0 && price <= 100) {
+      } else if (price >= 301 && price <= 400) {
         barchart_items["301-400"] = barchart_items["301-400"] + 1;
-      } else if (price >= 0 && price <= 100) {
+      } else if (price >= 401 && price <= 500) {
         barchart_items["401-500"] = barchart_items["401-500"] + 1;
-      } else if (price >= 0 && price <= 100) {
+      } else if (price >= 501 && price <= 600) {
         barchart_items["501-600"] = barchart_items["501-600"] + 1;
-      } else if (price >= 0 && price <= 100) {
+      } else if (price >= 601 && price <= 700) {
         barchart_items["601-700"] = barchart_items["601-700"] + 1;
-      } else if (price >= 0 && price <= 100) {
+      } else if (price >= 701 && price <= 800) {
         barchart_items["701-800"] = barchart_items["701-800"] + 1;
       } else {
         barchart_items["900 above"] = barchart_items["900 above"] + 1;
