@@ -15,25 +15,25 @@ export const AllCombined = async (req, res) => {
       "701-800": 0,
       "900 above": 0,
     };
-    const barchart_items = await DataModel.find({ month: month });
+    const barchart_items = {};
     items.map((ele) => {
       const { price } = ele;
       if (price >= 0 && price <= 100) {
-        data["0-100"] = data["0-100"] + 1;
+        barchart_items["0-100"] = barchart_items["0-100"] + 1;
       } else if (price >= 0 && price <= 100) {
-        data["201-300"] = data["201-300"] + 1;
+        barchart_items["201-300"] = barchart_items["201-300"] + 1;
       } else if (price >= 0 && price <= 100) {
-        data["301-400"] = data["301-400"] + 1;
+        barchart_items["301-400"] = barchart_items["301-400"] + 1;
       } else if (price >= 0 && price <= 100) {
-        data["401-500"] = data["401-500"] + 1;
+        barchart_items["401-500"] = barchart_items["401-500"] + 1;
       } else if (price >= 0 && price <= 100) {
-        data["501-600"] = data["501-600"] + 1;
+        barchart_items["501-600"] = barchart_items["501-600"] + 1;
       } else if (price >= 0 && price <= 100) {
-        data["601-700"] = data["601-700"] + 1;
+        barchart_items["601-700"] = barchart_items["601-700"] + 1;
       } else if (price >= 0 && price <= 100) {
-        data["701-800"] = data["701-800"] + 1;
+        barchart_items["701-800"] = barchart_items["701-800"] + 1;
       } else {
-        data["900 above"] = data["900 above"] + 1;
+        barchart_items["900 above"] = barchart_items["900 above"] + 1;
       }
     });
     const categories = items.reduce((acc, curr) => {
